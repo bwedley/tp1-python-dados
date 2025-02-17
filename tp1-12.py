@@ -3,7 +3,7 @@
 
 import json
 
-arquivo = 'arquivo a ser lido-tp1-12.json'
+arquivo = 'arquivo a ser lido-tp1-12.json' # arquivo json se encontra na mesma pasta do código
 
 def ler_arquivo_json(arquivo_lido):
     try:
@@ -11,5 +11,6 @@ def ler_arquivo_json(arquivo_lido):
             return json.load(arquivo)
     except FileNotFoundError:
         print(f"Arquivo '{arquivo_lido}' não encontrado.")
-    
+    except Exception as e:
+        print(f"Erro {e}")
 print(ler_arquivo_json(arquivo))

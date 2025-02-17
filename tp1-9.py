@@ -9,5 +9,5 @@ conj2s = {1, 2, 3, 4, 5}
 def test_conj(conj1, conj2):
     return conj1.issubset(conj2)
 
-print(test_conj(conj1, conj2))
-print(test_conj(conj1s, conj2s))
+print(test_conj(conj1, conj2)) #False
+print(test_conj(conj1s, conj2s)) #True

@@ -5,16 +5,18 @@
 
 import csv
 
-arquivo_escrito = 'arquivo a ser escrito-tp1-11.csv'
+arquivo_escrito = 'arquivo a ser escrito-tp1-11.csv' # arquivo csv vai ser criado na mesma pasta do código
 
 def escrever_dados(arquivo_lido, lista_dict):
     try:
         with open(arquivo_lido, mode='w', encoding='utf-8') as arquivo:
-            escrever_csv = csv.DictWriter(arquivo, fieldnames=lista_dict[0].keys())
+            escrever_csv = csv.DictWriter(arquivo, fieldnames=lista_dict[0])
             escrever_csv.writeheader()
             escrever_csv.writerows(lista_dict)
 
         print(f"Dados foram escritos no arquivo '{arquivo_lido}' com sucesso")
+    except FileNotFoundError:
+        print(f"Arquivo '{arquivo_lido}' não encontrado.")
     except Exception as e:
         print(f"Erro {e}")
 

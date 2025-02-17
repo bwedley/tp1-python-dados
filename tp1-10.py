@@ -3,6 +3,7 @@
 
 import csv
 
+arquivo = 'arquivo a ser lido-tp1-10.csv' # arquivo csv se encontra na mesma pasta do código
 def leitura_csv(arquivo_lido):
     try:
         with open(arquivo_lido, mode = 'r', encoding='utf-8') as arquivo:
@@ -11,5 +12,7 @@ def leitura_csv(arquivo_lido):
                 print(linha)
     except FileNotFoundError:
         print(f"Arquivo '{arquivo_lido}' não encontrado.")
-
-leitura_csv('arquivo a ser lido-tp1-10.csv') # arquivo csv se encontra na mesma pasta do código
+    except Exception as e:
+        print(f"Erro {e}")
+        
+leitura_csv(arquivo) 
